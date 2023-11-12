@@ -11,7 +11,11 @@
     "baseUrl": ".",
     "paths": {
       //"@route": ["./src/**"]
-      "@Config/*": ["./src/common/config/*"]
+      "@Config/*": ["./src/common/config/*"],
+      "@Urls/*": ["./src/common/constants/urls/*"],
+      "@Controllers/*": ["./src/controllers/*"],
+      "@Services/*": ["./src/services/*"]
+
     },
     "typeRoots": ["./node_modules/@types"],
     "strictNullChecks": true
