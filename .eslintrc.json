@@ -16,7 +16,11 @@
         "sourceType": "module",
         "project": "./tsconfig.json"
     },
+    
     "rules": {
         "prettier/prettier": "error"
-    }
+    },
+    "exclude": [
+        "Sequelize/*.js"
+    ]
 }
