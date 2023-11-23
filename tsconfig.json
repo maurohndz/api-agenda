@@ -20,7 +20,9 @@
 
     },
     "typeRoots": ["./node_modules/@types"],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

@@ -1,16 +1,19 @@
 import { Router } from 'express';
+import { Service, Inject } from 'typedi';
 import { USER, USER_DETAILS, USER_REGISTER, USER_UPDATE } from '@Urls/user.url';
 import { commonController } from '@Utils/commonController';
-import { ControllerFunc } from '@Types/server.type';
 import UserService from '@Services/user.service';
 
+@Service()
 class UserController {
+  @Inject()
+  private readonly userService: UserService;
+  
+  //
   private readonly controller: Router;
-  private readonly service: UserService;
 
   constructor(private readonly router: Router) {
     this.controller = Router();
-    this.service = new UserService();
   }
 
   run(): void {
@@ -18,6 +21,8 @@ class UserController {
     this.controller.get(
       USER_DETAILS,
       commonController(async (req, res, next) => {
+        console.log(this.userService)
+        this.userService.getDetails("9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d");
         return 'true';
       })
     );
