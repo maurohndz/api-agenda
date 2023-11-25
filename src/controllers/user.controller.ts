@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import { USER, USER_DETAILS, USER_REGISTER, USER_UPDATE } from '@Urls/user.url';
 import { commonController } from '@Utils/commonController';
-import { ControllerFunc } from '@Types/server.type';
 import UserService from '@Services/user.service';
 
 class UserController {

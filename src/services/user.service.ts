@@ -11,10 +11,10 @@ class UserService {
   /**
    * Method for obtaining information from a user
    * @param {UUID} userId - User ID.
-   * @returns {Promise<users>} - User information.
+   * @returns {Promise<any>} - User information.
    */
-  async getDetails(userId: UUID): Promise<users> {
-    return await this.prisma.users.findFirstOrThrow();
+  async getDetails(userId: UUID): Promise<any> {
+    return {}
   }
 }
 
