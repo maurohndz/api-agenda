@@ -5,11 +5,9 @@ import UserService from '@Services/user.service';
 
 class UserController {
   private readonly controller: Router;
-  private readonly service: UserService;
 
-  constructor(private readonly router: Router) {
+  constructor(private router: Router) {
     this.controller = Router();
-    this.service = new UserService();
   }
 
   run(): void {
@@ -17,7 +15,7 @@ class UserController {
     this.controller.get(
       USER_DETAILS,
       commonController(async (req, res, next) => {
-        return 'true';
+        return '[GET] obtain a users information';
       })
     );
 

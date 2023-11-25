@@ -1,13 +1,8 @@
-import { PrismaClient, type users } from '@prisma/client';
 import { type UUID } from 'crypto';
+import { Service } from 'typedi';
 
+@Service()
 class UserService {
-  private readonly prisma: PrismaClient;
-
-  constructor() {
-    this.prisma = new PrismaClient();
-  }
-
   /**
    * Method for obtaining information from a user
    * @param {UUID} userId - User ID.
