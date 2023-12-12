@@ -16,7 +16,8 @@
       "@Utils/*": ["./src/common/utils/*"],
       "@Types/*": ["./src/common/types/*"],
       "@Controllers/*": ["./src/controllers/*"],
-      "@Services/*": ["./src/services/*"]
+      "@Services/*": ["./src/services/*"],
+      "@Sequelize/*": ["./src/Sequelize/*"]
 
     },
     "typeRoots": ["./node_modules/@types"],
