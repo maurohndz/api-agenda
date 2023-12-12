@@ -3,8 +3,8 @@ import { ControllerFunc } from '@Types/server.type';
 
 export const commonController =
   (controller: ControllerFunc) =>
-  async (req: Request, res: Response, next: NextFunction) => {
-    controller(req, res, next)
+  async (req: Request, res: Response) => {
+    controller(req)
       .then((value) => {
         res.send(value);
       })

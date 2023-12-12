@@ -1,13 +1,10 @@
-import UserController from '@Controllers/user.controller';
 import { Router } from 'express';
+import { USER } from '@Urls/user.url';
+import UserRoutes from './user.routes';
 
 // Init main routes
 const router = Router();
 
-// Controllers
-const userController = new UserController(router);
-
-// Routes
-userController.run();
+router.use(USER, UserRoutes);
 
 export default router;
