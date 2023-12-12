@@ -7,6 +7,6 @@ import UserController from '@Controllers/user.controller';
 const router = Router();
 const userController = Container.get(UserController);
 
-router.get(USER_REGISTER, commonController(userController.registerUser))
+router.get(USER_REGISTER, commonController(userController.registerUser.bind(userController)));
 
 export default router;

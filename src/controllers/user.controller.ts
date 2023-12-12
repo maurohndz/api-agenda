@@ -1,12 +1,13 @@
 import { Request } from 'express';
-import { Service } from 'typedi';
+import { Service, Inject } from 'typedi';
+import UserService from '@Services/user.service';
 
 @Service()
 class UserController {
-  constructor() {}
+  constructor(@Inject() private userService: UserService) {}
 
   async registerUser(req: Request) {
-    return "Hola";
+    return await this.userService.createUser(req.body);
   }
 }
 
