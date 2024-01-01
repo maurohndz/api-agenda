@@ -16,11 +16,14 @@
       "@Utils/*": ["./src/common/utils/*"],
       "@Types/*": ["./src/common/types/*"],
       "@Controllers/*": ["./src/controllers/*"],
-      "@Services/*": ["./src/services/*"]
-
+      "@Services/*": ["./src/services/*"],
+      "@Sequelize/*": ["./src/Sequelize/*"],
+      "@Repos/*": ["./src/repositories/*"]
     },
     "typeRoots": ["./node_modules/@types"],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
