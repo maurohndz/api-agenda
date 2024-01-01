@@ -5,11 +5,11 @@ const config = {
     ENVIRONMENT: process.env.ENVIRONMENT ?? 'development'
   },
   DB: {
-    PORT: Number(process.env.DATABASE_PORT),
-    NAME: process.env.DATABASE_NAME ?? '',
-    USER: process.env.DATABASE_USER ?? '',
-    PASS: process.env.DATABASE_PASS ?? '',
-    HOST: process.env.DATABASE_HOST ?? ''
+    DATABASE_NAME: process.env.DATABASE_NAME ?? '',
+    DATABASE_USER: process.env.DATABASE_USER ?? '',
+    DATABASE_PASS: process.env.DATABASE_PASS ?? '',
+    DATABASE_HOST: process.env.DATABASE_HOST ?? '',
+    DATABASE_PORT: Number(process.env.DATABASE_PORT),
   }
 };
 

@@ -7,6 +7,12 @@ class UserRepository extends BaseRepository<usersAttributes> {
   constructor() {
     super(initModels(sequelize)['users']);
   }
+
+  async getDetails(): Promise<usersAttributes[]> {
+    return await this.findAll();
+  }
+
+  // Agrega aquí otros métodos específicos de User...
 }
 
 export default UserRepository;
