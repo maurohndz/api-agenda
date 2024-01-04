@@ -1,23 +1,25 @@
-import { NextFunction, Request, Response } from 'express';
+import { Request } from 'express';
 import { Service, Inject } from 'typedi';
+import { commonController } from '@Utils/commonController';
 import UserService from '@Services/user.service';
 
 @Service()
 class UserController {
   constructor(@Inject() private userService: UserService) {}
 
-  async findUser(req: Request, res: Response, next: NextFunction) {
-    try {
-    } catch (error) {
-      next(error);
-    }
-  
+  /**
+   * Method for obtaining information from a user
+   */
+  findUser = commonController(async (req: Request) => {
     return this.userService.details(req.params.id);
-  }
+  });
 
-  async registerUser(req: Request) {
+  /**
+   * Method to register a user
+   */
+  registerUser = commonController(async (req: Request) => {
     return await this.userService.register(req.body);
-  }
+  })
 }
 
 export default UserController;

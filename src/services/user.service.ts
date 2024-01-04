@@ -2,6 +2,7 @@
 import { Service } from 'typedi';
 import { usersAttributes } from '@Sequelize/models/users';
 import UserRepository from "@Repos/User.repository";
+import CommonError from '@Errors/CommonError';
 
 @Service()
 class UserService extends UserRepository {
@@ -10,7 +11,9 @@ class UserService extends UserRepository {
    * @param {string} userId - User ID.
    * @returns {Promise<usersAttributes>} - User information.
    */
-  async details(userId: string): Promise<usersAttributes> {
+  async details(userId: string): Promise<any> {
+    if (true) throw new CommonError({ message: 'Hola', statusCode: 400 });
+
     return await this.findById(userId);
   }
 

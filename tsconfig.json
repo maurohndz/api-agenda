@@ -15,6 +15,7 @@
       "@Urls/*": ["./src/common/constants/urls/*"],
       "@Utils/*": ["./src/common/utils/*"],
       "@Types/*": ["./src/common/types/*"],
+      "@Errors/*": ["./src/common/errors/*"],
       "@Controllers/*": ["./src/controllers/*"],
       "@Services/*": ["./src/services/*"],
       "@Sequelize/*": ["./src/Sequelize/*"],

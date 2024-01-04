@@ -8,6 +8,6 @@ const router = Router();
 const userController = Container.get(UserController);
 
 router.get(USER_DETAILS, userController.findUser);
-router.post(USER_REGISTER, commonController(userController.registerUser.bind(userController)));
+router.post(USER_REGISTER, userController.registerUser);
 
 export default router;

@@ -2,15 +2,15 @@ import config from '@Config/environment';
 import { Sequelize } from 'sequelize';
 import { initModels } from './models/init-models';
 
-export const database = new Sequelize(
-  config.DB.DATABASE_NAME,
-  config.DB.DATABASE_USER,
-  config.DB.DATABASE_PASS,
+export const sequelize = new Sequelize(
+  config.DB.NAME,
+  config.DB.USER,
+  config.DB.PASS,
   {
-    host: config.DB.DATABASE_HOST,
-    port: config.DB.DATABASE_PORT,
     dialect: 'postgres',
+    host: config.DB.HOST,
+    port: config.DB.PORT
   }
 );
 
-export const models = initModels(database);
+export const models = initModels(sequelize);
