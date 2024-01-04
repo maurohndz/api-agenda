@@ -1,5 +1,8 @@
 import { type Request, type Response, type NextFunction } from 'express';
+import BuildResponse from '@Tools/BuildResponse';
 
 export type ControllerFunc = (
   req: Request,
-) => Promise<any|boolean>;
+  res: Response,
+  next: NextFunction
+) => Promise<BuildResponse>;

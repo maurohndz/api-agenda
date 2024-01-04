@@ -1,3 +1,4 @@
+import { errorHandling } from '@Utils/errorHandling';
 import express from 'express';
 import bodyParser from 'body-parser';
 import config from '@Config/environment';
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
 app.use(`/api/${config.API.VERSION}`, routes);
+app.use(errorHandling());
 
 app.listen(config.API.PORT, () => {
   console.log(

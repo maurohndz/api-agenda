@@ -1,7 +1,9 @@
 import { Request } from 'express';
 import { Service, Inject } from 'typedi';
 import { commonController } from '@Utils/commonController';
+import { SUCCESS } from '@HttpMessages/succes';
 import UserService from '@Services/user.service';
+import BuildResponse from '@Tools/BuildResponse';
 
 @Service()
 class UserController {
@@ -11,15 +13,17 @@ class UserController {
    * Method for obtaining information from a user
    */
   findUser = commonController(async (req: Request) => {
-    return this.userService.details(req.params.id);
+    const user = await this.userService.details(req.params.id);
+    return new BuildResponse(SUCCESS, { data: user });
   });
 
   /**
    * Method to register a user
    */
   registerUser = commonController(async (req: Request) => {
-    return await this.userService.register(req.body);
-  })
+    const user = this.userService.register(req.body);
+    return new BuildResponse(SUCCESS, { data: user });
+  });
 }
 
 export default UserController;

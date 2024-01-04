@@ -13,9 +13,10 @@
       //"@route": ["./src/**"]
       "@Config/*": ["./src/common/config/*"],
       "@Urls/*": ["./src/common/constants/urls/*"],
+      "@HttpMessages/*": ["./src/common/constants/httpMessages/*"],
       "@Utils/*": ["./src/common/utils/*"],
       "@Types/*": ["./src/common/types/*"],
-      "@Errors/*": ["./src/common/errors/*"],
+      "@Tools/*": ["src/common/tools/*"],
       "@Controllers/*": ["./src/controllers/*"],
       "@Services/*": ["./src/services/*"],
       "@Sequelize/*": ["./src/Sequelize/*"],
