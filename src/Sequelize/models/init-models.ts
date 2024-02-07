@@ -21,7 +21,7 @@ export function initModels(sequelize: Sequelize) {
   const users = _users.initModel(sequelize);
 
   credentials.belongsTo(users, { as: "user", foreignKey: "user_id"});
-  users.hasMany(credentials, { as: "credentials", foreignKey: "user_id"});
+  users.hasOne(credentials, { as: "credential", foreignKey: "user_id"});
 
   return {
     credentials: credentials,

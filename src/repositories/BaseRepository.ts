@@ -1,16 +1,22 @@
-class BaseRepository<T> {
+import { fn } from 'sequelize';
+import { CreateOrUpdateInterface } from '@Interfaces/Repositorie/index.interface';
+
+class BaseRepository<T, C> {
   protected model: any;
 
   constructor(model) {
     this.model = model;
   }
 
-  protected async create(data: T): Promise<T> {
-    return this.model.create(data);
+  protected async store(data: C, options: CreateOrUpdateInterface): Promise<T> {
+    return this.model.create(data, { transaction: options.transaction });
   }
 
   protected async update(id: string | number, data): Promise<T> {
-    return this.model.update(data, { where: { id } });
+    return this.model.update({
+      ...data,
+      updated_at: fn('NOW'),
+    }, { where: { id } });
   }
 
   protected async delete(id: string | number): Promise<string | number> {
@@ -19,6 +25,10 @@ class BaseRepository<T> {
 
   protected async findAll(): Promise<[T]> {
     return this.model.findAll();
+  }
+
+  protected async find(where) {
+    return this.model.findOne({ where });
   }
 
   protected async findById(id: string | number): Promise<T> {

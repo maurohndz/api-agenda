@@ -20,7 +20,13 @@ const Auto = new SequelizeAuto(
     tables: [
       'main.users',
       'security.credentials'
-    ]
+    ],
+    additional: {
+      createdAt: 'created_at',
+      updatedAt: 'updated_at',
+      deletedAt: 'deleted_at',
+      timestamps: false
+  }
   }
 );
 

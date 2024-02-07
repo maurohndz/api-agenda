@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
 app.use(`/api/${config.API.VERSION}`, routes);
-app.use(errorHandling());
+// app.use(errorHandling()); TODO: Probablemente no esta haciendo nada
 
 app.listen(config.API.PORT, () => {
   console.log(
