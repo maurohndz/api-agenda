@@ -16,6 +16,7 @@
       "@HttpMessages/*": ["./src/common/constants/httpMessages/*"],
       "@Utils/*": ["./src/common/utils/*"],
       "@Types/*": ["./src/common/types/*"],
+      "@Interfaces/*": ["./src/common/interfaces/*"],
       "@Tools/*": ["src/common/tools/*"],
       "@Controllers/*": ["./src/controllers/*"],
       "@Services/*": ["./src/services/*"],

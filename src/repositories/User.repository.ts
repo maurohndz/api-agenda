@@ -1,19 +1,13 @@
-//import BaseRepository from './BaseRepository';
-import MockingBaseRepository from './MockingBaseRepository';
 import { usersAttributes } from '@Sequelize/models/users';
 import { sequelize } from '@Sequelize/connection';
 import { initModels } from '@Sequelize/models/init-models';
+import { RegisterUserAttrInterface } from '@Interfaces/User/register.interface';
+import BaseRepository from './BaseRepository';
 
-class UserRepository extends MockingBaseRepository<usersAttributes> {
+class UserRepository extends BaseRepository<usersAttributes, RegisterUserAttrInterface> {
   constructor() {
     super(initModels(sequelize)['users']);
   }
-
-  async getDetails(): Promise<usersAttributes[]> {
-    return await this.findAll();
-  }
-
-  // Agrega aquí otros métodos específicos de User...
 }
 
 export default UserRepository;

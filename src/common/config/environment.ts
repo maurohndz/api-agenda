@@ -10,6 +10,9 @@ const config = {
     PASS: process.env.DATABASE_PASS ?? '',
     HOST: process.env.DATABASE_HOST ?? '',
     PORT: Number(process.env.DATABASE_PORT),
+  },
+  ENCRYPT: {
+    SALT: Number(process.env.BCRYPT_SALT),
   }
 };
 
