@@ -18,7 +18,7 @@ class UserService extends UserRepository {
    * @param {string} userId - User ID.
    * @returns {Promise<usersAttributes>} - User information.
    */
-  async details(userId: string): Promise<any> {
+  async details(where: any): Promise<any> {
     if (true)
       throw new CommonError({
         message: 'Error en el UserService - details',
